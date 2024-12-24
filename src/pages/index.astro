@@ -1,11 +1,37 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import VEED from "../components/VEED.astro";
+import X from "../components/X.astro";
+import { Image } from "astro:assets";
+import jesse from "../assets/jesse.png";
 ---
 
+<style>
+  body {
+    @apply bg-white dark:bg-black dark:text-white;
+  }
+</style>
+
 <Layout>
-	<Welcome />
+  <main
+    class="flex flex-col items-center mt-16 md:mt-32 px-8 text-center text-black bg-white dark:bg-black dark:text-white space-y-8 lg:space-y-12"
+  >
+    <Image
+      src={jesse}
+      alt="Jesse Sibley"
+      class="rounded-full w-24 h-24 lg:w-32 lg:h-32 shadow-lg"
+      loading="eager"
+    />
+    <h1
+      class="font-bebas text-4xl md:text-5xl lg:text-7xl font-bold text-balance max-w-6xl tracking-normal leading-tight"
+    >
+      Hey, I'm Jesse. I'm a <u class="underline-offset-8">software engineer</u> at
+      <VEED /> based in <u class="underline-offset-8">London</u>.
+    </h1>
+    <a
+      href="https://www.x.com/jessesibley_"
+      class="font-bebas text-2xl md:text-3xl shadow-xl bg-black dark:bg-white/10 py-3 px-8 hover:scale-105 transition-all duration-300 text-white rounded-xl inline-flex items-center gap-2"
+      >Follow me on <X /></a
+    >
+  </main>
 </Layout>
